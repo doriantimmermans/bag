@@ -1,0 +1,48 @@
+
+.bandes-container{
+  font-size: 2.2vw;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.bande{
+  flex-grow: 1;
+  flex-basis: 0;
+
+  text-decoration: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bande.odd{
+  background: var(--gradient);
+  color: black;
+}
+
+.bande.even{
+  background: var(--orange);
+  color: var(--textc);
+}
+
+.bande:hover{
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+
+@media (max-width: 601px){
+  .bandes-container{
+    font-size: 3.2vh;
+    flex-direction: column;
+  }
+  .bande.odd{
+    background: var(--gradient_right);
+    color: black;
+  }
+}

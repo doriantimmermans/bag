@@ -1,0 +1,325 @@
+:root {
+  --orange: orangered;
+  /* color theme */
+  --textc: gainsboro;
+  /* text color when it's on the color theme */
+
+  --border: white;
+  /* buttons or other border */
+  --fill: whitesmoke;
+  /* buttons, modal or plain zone, fill */
+
+  --gradient: linear-gradient(whitesmoke, gainsboro);
+  --gradient_right: linear-gradient(to right, whitesmoke, gainsboro);
+  --gradient_trans: linear-gradient(whitesmoke, transparent);
+}
+
+
+/* --- FONTS & BASICS--- */
+
+@font-face {
+    font-family: 'Sporting Grotesque_Bold';
+    src:    url('../font/Sporting_Grotesque-Bold.eot');
+    src:    url('../font/Sporting_Grotesque-Bold.eot?#iefix') format('embedded-opentype'),
+            url('../font/Sporting_Grotesque-Bold.woff') format('woff'),
+            url('../font/Sporting_Grotesque-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sporting Grotesque Regular';
+    src:    url('../font/Sporting_Grotesque-Regular.eot');
+    src:    url('../font/Sporting_Grotesque-Regular.eot?#iefix') format('embedded-opentype'),
+            url('../font/Sporting_Grotesque-Regular.woff') format('woff'),
+            url('../font/Sporting_Grotesque-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Symbols';
+    src:    url('../font/seguisym.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-image: var(--gradient);
+  color: black;
+
+	font-family: 'Sporting Grotesque Regular', sans-serif;
+  font-size: 14.5px;
+
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+@media (max-width: 601px) {
+  body{
+    font-size: 13.5px;
+  }
+}
+
+a{
+  color: black;
+}
+a:hover{
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+
+*::selection{
+    background-color: var(--orange);
+    color: var(--textc);
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+table{
+  width: 100%;
+}
+
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
+
+/* --- FORM ART --- */
+label{
+  display: block;
+  margin-bottom: 12px;
+}
+button{
+  padding: 6px 18px;
+  font-weight: bold;
+  font-size: 2rem;
+  background-color: var(--fill);
+  border: 6px outset;
+  border-color: var(--border);
+}
+button:hover{
+  background-color: var(--fill);
+  border: 6px inset;
+  border-color: var(--border);
+}
+hr{
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px outset;
+  border-color: var(--border);
+  padding: 0;
+}
+.cadre{
+  background: var(--fill);
+  border: 12px ridge;
+  border-color: var(--border);
+  box-sizing: border-box;
+  height: 100%;
+}
+.arrow:after{
+  font-family: 'Verdana';
+  content: "\2192";
+  font-size: 1.5rem;
+  position: relative;
+  bottom: -0.15rem;
+}
+.unicode{
+  font-family: 'Segoe UI Symbols';
+  /* font-family: 'DejaVu'; */
+}
+.rot{
+  transform: rotate(-180deg);
+}
+.logo-wrapper{
+  display: flex;
+  align-items: center;
+}
+.logo{
+  flex-basis: 100%;
+  margin: 0 12px 72px;
+}
+
+/* --- FLEX --- */
+
+.container{
+  margin: 2em auto;
+  max-width: 1000px;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.item {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+}
+.item.quarter{
+  flex-basis: 50%;
+}
+@media all and (min-width: 601px) {
+  .item {
+    flex-basis: 50%;
+  }
+  .item.quarter{
+    flex-basis: 25%;
+  }
+  .item.half{
+    flex-basis: 50%;
+  }
+  .item.two-third{
+    flex-basis: 66%;
+  }
+  .item.full{
+    flex-basis: 100%;
+  }
+}
+@media all and (min-width: 993px) {
+  .item {
+    flex-basis: 33%;
+  }
+  .item.quarter{
+    flex-basis: 25%;
+  }
+  .item.half{
+    flex-basis: 50%;
+  }
+  .item.two-third{
+    flex-basis: 66%;
+  }
+  .item.full{
+    flex-basis: 100%;
+  }
+}
+
+
+.one-line-flex{
+  display: flex;
+}
+.one-line-flex > *{
+  flex: 1 0 0%;
+}
+.no-grow{
+  flex-grow: 0;
+}
+.colophon{
+  margin-top: 72px;
+  font-size: 0.75rem;
+  color: white;
+}
+.colophon a{
+  color: white;
+}
+
+
+/* --- MODAL --- */
+
+/* prend tout l'écran */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(125,125,125,0.5);
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: var(--fill);
+  color: black;
+  border: 12px ridge;
+  border-color: var(--border);
+  padding: 48px 24px;
+
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+@media(min-width: 993px){
+  .modal-content {
+    padding: 48px;
+
+    width: 40vw;
+    height: auto;
+  }
+}
+
+/* --- blog post --- */
+
+.blog-post{
+  background: var(--gradient_trans);
+  overflow: auto;
+  margin-top: 1em;
+
+  border-top: 6px outset;
+  border-color: var(--border);
+}
+
+.blog-post h2{
+  text-align: center;
+  margin: 1.5em;
+}
+.blog-post h4{
+  margin-top: 0;
+  text-transform: capitalize;
+}
+.blog-post .date{
+  text-align: right;
+  margin-right: 1.5em;
+  color: white;
+}
+.blog-post .content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.blog-post .content .image{
+  flex-basis: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.blog-post .content .texte{
+  flex-basis: 100%;
+  box-sizing: border-box;
+}
+.blog-post .content .texte,
+.blog-post .content .image{
+  padding: 0.5em 1.5em;
+}
+
+.blog-post .content .image img{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border: 6px inset;
+  border-color: var(--border);
+  filter: grayscale();
+}
+
+@media (min-width: 601px) {
+  .blog-post .content{
+    flex-wrap: nowrap;
+  }
+  .blog-post .content .image{
+    flex-basis: 40%;
+    height: auto;
+  }
+}

@@ -1,0 +1,69 @@
+
+/* --- HEADER and FOOTER ---*/
+
+.header,
+.footer {
+  background: var(--orange);
+  color: var(--textc);
+
+  font-family: 'Sporting Grotesque_Bold';
+
+  text-align: center;
+  overflow: auto;
+}
+.header{
+  padding-bottom: 12px;
+}
+
+.gris{
+  background: var(--gradient_right);
+  color: black;
+}
+.marquee {
+  /* fait que ça prend exactement la taille de l'écran et coupe le reste */
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  /*tt sur la même ligne*/
+  white-space: nowrap;
+}
+
+/* TITRE qui defile */
+.title{
+  display: inline-block;
+  margin: 12px 0px 0px;
+  font-size: 48px;
+}
+.header .title{
+  animation: marqueeR 20s linear infinite;
+}
+.footer .title{
+  animation: marqueeL 20s linear infinite;
+}
+
+/* SOUSTITRE */
+h3{
+  padding: 0 2em;
+}
+
+@keyframes marqueeL {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marqueeR {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@media (max-width: 601px){
+  .title{
+    font-size: 32px;
+  }
+}

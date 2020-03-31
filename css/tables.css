@@ -1,0 +1,133 @@
+
+/* --- TABLES DES COMPTES GLOCKS --- */
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  padding-left: 12px;
+  border: 6px ridge;
+  border-color: var(--border);
+  margin-bottom: 24px;
+  font-family: monospace;
+}
+
+.scroll-table-container{
+  background-color: var(--fill);
+  border: 6px ridge;
+  border-color: var(--border);
+  box-sizing: border-box;
+
+  overflow-x: auto;
+  max-height: 50vh;
+  max-width: calc(100vw - 2em);
+  /* la largeur de l'écran moins le padding */
+}
+.data-table{
+  text-align: right;    /* default is right, use .left or .center class to change*/
+  border-spacing: 0;
+  font-family: monospace;
+}
+.data-table tr:hover{
+  background-color: var(--orange);
+  color: var(--textc);
+}
+.data-table th{
+  text-align: center;
+  font-weight: bold;
+  padding: 4px 6px;
+}
+.data-table td{
+  vertical-align: top;
+  padding: 4px 6px;
+}
+.data-table td:first-child{
+  padding-left: 12px;
+}
+.data-table td:last-child{
+  padding-right: 12px;
+}
+
+#stat td{
+  white-space: nowrap;
+}
+
+#prix .scroll-table-container{
+  max-height: none;
+  border: 0px;
+  background: none;
+}
+#prix td{
+  text-align: left;
+  vertical-align: top;
+}
+#prix td.glock{
+  text-align: right;
+  font-weight: bold;
+}
+#prix tr:hover{
+  background-color: inherit;
+  color: inherit;
+}
+#prix tr:nth-child(even){
+  background-color: gainsboro;
+}
+
+
+.flex-table{
+  width: 100%;
+  border: 6px ridge;
+  background-color: var(--fill);
+  border-color: var(--border);
+  box-sizing: border-box;
+
+  /* font-family: monospace; */
+  overflow-x: auto;
+  height: 50vh;
+}
+.flex-table .line:hover {
+  background-color: var(--orange);
+  color: var(--textc);
+}
+#comptes .line{
+  padding: 6px 12px;
+  overflow: auto;
+}
+#comptes .info, #comptes .modif{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 6px 0;
+}
+#comptes .info{
+  margin-bottom: 0;
+}
+.flex-table .big{
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 50%;
+}
+.flex-table form{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.flex-table input{
+  margin: 0;
+  margin-right: 12px;
+  text-align: right;
+  min-width: 1px;
+}
+.flex-table button{
+  font-size: 1rem;
+  padding: 0;
+  flex-shrink: 0;
+
+  border-width: 0px;
+  background-color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
