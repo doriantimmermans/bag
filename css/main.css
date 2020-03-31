@@ -18,17 +18,15 @@
 /* --- FONTS & BASICS--- */
 
 @font-face {
-    font-family: 'Sporting Grotesque_Bold';
-    src:    url('../font/Sporting_Grotesque-Bold.eot');
+    font-family: 'Sporting Grotesque';
     src:    url('../font/Sporting_Grotesque-Bold.eot?#iefix') format('embedded-opentype'),
             url('../font/Sporting_Grotesque-Bold.woff') format('woff'),
             url('../font/Sporting_Grotesque-Bold.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Sporting Grotesque Regular';
-    src:    url('../font/Sporting_Grotesque-Regular.eot');
+    font-family: 'Sporting Grotesque';
     src:    url('../font/Sporting_Grotesque-Regular.eot?#iefix') format('embedded-opentype'),
             url('../font/Sporting_Grotesque-Regular.woff') format('woff'),
             url('../font/Sporting_Grotesque-Regular.woff2') format('woff2');
@@ -46,7 +44,7 @@ body {
 	background-image: var(--gradient);
   color: black;
 
-	font-family: 'Sporting Grotesque Regular', sans-serif;
+	font-family: 'Sporting Grotesque', sans-serif;
   font-size: 14.5px;
 
   padding: 0;
@@ -116,13 +114,6 @@ hr{
   border-color: var(--border);
   padding: 0;
 }
-.cadre{
-  background: var(--fill);
-  border: 12px ridge;
-  border-color: var(--border);
-  box-sizing: border-box;
-  height: 100%;
-}
 .arrow:after{
   font-family: 'Verdana';
   content: "\2192";
@@ -137,13 +128,14 @@ hr{
 .rot{
   transform: rotate(-180deg);
 }
+
 .logo-wrapper{
   display: flex;
   align-items: center;
 }
-.logo{
+.logo-wrapper > img{
   flex-basis: 100%;
-  margin: 0 12px 72px;
+  margin: 0 2em;
 }
 
 /* --- FLEX --- */
@@ -155,7 +147,6 @@ hr{
 .flex{
   display: flex;
   flex-wrap: wrap;
-  padding: 0;
 }
 .item {
   flex-basis: 100%;
@@ -163,6 +154,15 @@ hr{
   padding: 0.5em 1em;
   box-sizing: border-box;
 }
+.cadre{
+  background: var(--fill);
+  border: 12px ridge;
+  border-color: var(--border);
+  box-sizing: border-box;
+  height: 100%;
+}
+
+
 .item.quarter{
   flex-basis: 50%;
 }
@@ -205,12 +205,14 @@ hr{
 .one-line-flex{
   display: flex;
 }
-.one-line-flex > *{
-  flex: 1 0 0%;
+.one-line-flex > *:first-child{
+  flex-grow: 1;
 }
+
 .no-grow{
   flex-grow: 0;
 }
+
 .colophon{
   margin-top: 72px;
   font-size: 0.75rem;

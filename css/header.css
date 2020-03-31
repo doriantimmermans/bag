@@ -6,8 +6,6 @@
   background: var(--orange);
   color: var(--textc);
 
-  font-family: 'Sporting Grotesque_Bold';
-
   text-align: center;
   overflow: auto;
 }
@@ -24,7 +22,6 @@
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
-  /*tt sur la même ligne*/
   white-space: nowrap;
 }
 

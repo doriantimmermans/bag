@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>BàG — récupérathèque de l'ERG</title>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon3.png"/>
 
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/tables.css">
 
-  <link rel="shortcut icon" type="image/png" href="assets/favicon3.png"/>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -67,7 +66,7 @@
 
     <!-- COMPTES PRINTING -->
 
-    <article class="item two-third no-grow" >
+    <article class="item two-third" >
       <h2>Comptes</h2>
 
       <input type="text" id="myInput" onkeyup="recherche()" placeholder="Rechercher">
@@ -182,7 +181,7 @@
 
     <!-- HISTORIQUE PRINTING -->
 
-    <article class="item two-third no-grow" >
+    <article class="item two-third" >
 
       <h2>Historique</h2>
 
@@ -199,7 +198,7 @@
             <tr>
               <td class="left">
               <?php
-              echo '<i>' . $journal['action'] . '</i>';
+              echo  $journal['action'] ;
               if($journal['action']=="Ajout" or $journal['action']=="Décompte"){ echo ' à '; }
               else{ echo ' de '; }
               echo '<strong>' . $journal['nom'] . ' ' . $journal['prenom'] . '</strong>';
