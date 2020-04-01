@@ -39,7 +39,8 @@
 }
 
 /* SOUSTITRE */
-h3{
+.header h3,
+.footer h3{
   padding: 0 2em;
 }
 

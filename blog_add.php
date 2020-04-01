@@ -5,10 +5,10 @@
   <title>BàG — récupérathèque de l'ERG</title>
   <link rel="shortcut icon" type="image/png" href="assets/favicon3.png"/>
 
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/blog.css">
-
+  
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -62,52 +62,9 @@
     </article>
 
     <?php
-      $count = $bdd->query("SELECT * FROM blog");
-      $post_number = $count->rowCount();
+    $posts = $bdd->query('SELECT *, date, DATE_FORMAT(date, \'le %d/%m/%Y\') date_fr FROM blog ORDER BY date DESC');
 
-      // get the page
-      if(isset($_GET['page'])){
-        $page = htmlspecialchars($_GET['page']);
-      }
-      else{
-        $page = 1;
-      }
-      $post_per_page = 3;
-      $start = ($page-1) * $post_per_page;
-      $end = $start + $post_per_page;
-      // echo $start . ',  ' . $end;
-      $page_number = ceil($post_number / $post_per_page);
-    ?>
-
-    <hr>
-
-    <article class="item full">
-      <div class="one-line-flex">
-        <h3 id="page_number">Page <?php echo $page; ?></h3>
-        <?php
-        if($page > 1){
-          $previous_page = $page - 1;
-          $page_url = 'blog.php?page=' . $previous_page;
-          ?>
-            <div class="center">
-              <button onclick="location.href='<?php echo $page_url ; ?>'">
-                &#11014;
-              </button>
-            </div>
-          <?php
-        }
-        ?>
-        <div></div>
-      </div>
-    </article>
-
-
-    <?php
-    $posts = $bdd -> prepare('SELECT *, date, DATE_FORMAT(date, \'%d/%m/%Y\') date_fr FROM blog ORDER BY date DESC LIMIT :strt, :nd;');
-    $posts -> bindParam(':strt', $start, PDO::PARAM_INT);
-    $posts -> bindParam(':nd', $end, PDO::PARAM_INT);
-    $posts -> execute();
-
+    // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
     while ($post = $posts->fetch()){?>
 
       <article class="item full">
@@ -134,22 +91,6 @@
       <?php
       }
     ?>
-
-    <?php
-    if($page < $page_number){
-      $next_page = $page + 1;
-      $page_url = 'blog.php?page=' . $next_page;
-      ?>
-        <article class="item center full">
-          <button onclick="location.href='<?php echo $page_url ; ?>'">
-            &#11015;
-          </button>
-        </article>
-      <?php
-    }
-    ?>
-
-    <hr>
 
     <article class="item right full">
       <button onclick="location.href='index.html'"> <span class="unicode">&#10148;</span> </button>
