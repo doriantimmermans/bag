@@ -10,7 +10,7 @@
   /* buttons, modal or plain zone, fill */
   --middle: #E7E7E7;
   /* tint between the fill & border  */
-  
+
   --gradient: linear-gradient(whitesmoke, gainsboro);
   --gradient_right: linear-gradient(to right, whitesmoke, gainsboro);
   --gradient_trans: linear-gradient(whitesmoke, transparent);
@@ -92,23 +92,35 @@ table{
 }
 
 /* --- FORM ART --- */
+.unicode{
+  font-family: 'Segoe UI Symbols';
+}
 label{
   display: block;
   margin-bottom: 12px;
 }
 button{
-  padding: 6px 18px;
+  padding: 4px 18px;
   font-weight: bold;
   font-size: 2rem;
   background-color: var(--fill);
   border: 6px outset;
   border-color: var(--border);
 }
+button .unicode{
+  /* sert à re-centrer verticalement la baseline sur la line-height de la typo
+  pour les flèches ou les croix dans les boutons soit au milieu */
+  display: inline-block;
+  padding: 0 0 0.13em;
+}
 button:hover{
   background-color: var(--fill);
   border: 6px inset;
   border-color: var(--border);
   color: white;
+}
+button .rot{
+  transform: rotate(-180deg);
 }
 hr{
   width: 100%;
@@ -124,13 +136,6 @@ hr{
   font-size: 1.5rem;
   position: relative;
   bottom: -0.15rem;
-}
-.unicode{
-  font-family: 'Segoe UI Symbols';
-  /* font-family: 'DejaVu'; */
-}
-.rot{
-  transform: rotate(-180deg);
 }
 
 .logo-wrapper{

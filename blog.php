@@ -92,7 +92,7 @@
           ?>
             <div class="center">
               <button onclick="location.href='<?php echo $page_url ; ?>'">
-                &#11014;
+                <span class="unicode">&#11014;</span>
               </button>
             </div>
           <?php
@@ -143,7 +143,7 @@
       ?>
         <article class="item center full">
           <button onclick="location.href='<?php echo $page_url ; ?>'">
-            &#11015;
+            <span class="unicode">&#11015;</span>
           </button>
         </article>
       <?php
