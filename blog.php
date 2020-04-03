@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>BàG — récupérathèque de l'ERG</title>
+  <meta name="description" content="La Boite à Gants (BàG) est la récupérathèque de l'École de Recherche Graphique (ERG)">
   <link rel="shortcut icon" type="image/png" href="assets/favicon3.png"/>
 
   <link rel="stylesheet" href="css/main.css">
