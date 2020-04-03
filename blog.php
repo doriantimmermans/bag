@@ -82,7 +82,7 @@
     <hr>
 
     <article class="item full">
-      <div class="one-line-flex">
+      <div class="one-line-flex same-size">
         <h3 id="page_number">Page <?php echo $page; ?></h3>
         <?php
         if($page > 1){

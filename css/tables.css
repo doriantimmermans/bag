@@ -123,7 +123,7 @@ input {
   flex-shrink: 0;
 
   border-width: 0px;
-  background-color: white;
+  background-color: var(--middle);
   width: 42px;
   height: 42px;
   border-radius: 50%;

@@ -8,7 +8,9 @@
   /* buttons or other border */
   --fill: whitesmoke;
   /* buttons, modal or plain zone, fill */
-
+  --middle: #E7E7E7;
+  /* tint between the fill & border  */
+  
   --gradient: linear-gradient(whitesmoke, gainsboro);
   --gradient_right: linear-gradient(to right, whitesmoke, gainsboro);
   --gradient_trans: linear-gradient(whitesmoke, transparent);
@@ -62,7 +64,7 @@ a{
 }
 a:hover{
   color: white;
-  text-shadow: 0 0 20px white;
+  text-shadow: 0 0 0.5em white;
 }
 
 *::selection{
@@ -106,6 +108,7 @@ button:hover{
   background-color: var(--fill);
   border: 6px inset;
   border-color: var(--border);
+  color: white;
 }
 hr{
   width: 100%;
@@ -210,9 +213,6 @@ hr{
 }
 .one-line-flex > *{
   flex: 1 0 0%;
-  white-space: nowrap;
-  min-height: 1px;
-  min-width: 1px;
 }
 
 .no-grow{
