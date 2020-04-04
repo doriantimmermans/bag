@@ -10,6 +10,6 @@
   // setcookie('login', '');
   // setcookie('pass_hache', '');
 
-  header("Location: glock.php");
+  header("Location: glock");
 
 ?>

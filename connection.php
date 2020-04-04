@@ -21,6 +21,6 @@
       echo 'Mauvais identifiant ou mot de passe';
   }
 
-  header("Location: glock.php");
+  header("Location: glock");
 
 ?>

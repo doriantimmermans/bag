@@ -60,7 +60,7 @@
   <section class="container flex">
 
     <article class="item full">
-      <button onclick="location.href='index.html'">
+      <button onclick="location.href='/'">
         <div class="rot"><span class="unicode">&#10148;</span></div>
       </button>
     </article>
@@ -342,7 +342,7 @@
 
 
     <article class="item right full">
-      <button onclick="location.href='index.html'"> <span class="unicode">&#10148;</span> </button>
+      <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 
   </section>

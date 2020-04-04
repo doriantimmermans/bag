@@ -57,7 +57,7 @@
 
     <article class="item full">
       <div class="one-line-flex">
-        <div><button onclick="location.href='index.html'"><div class="rot"><span class="unicode">&#10148;</span></div></button></div>
+        <div><button onclick="location.href='/'"><div class="rot"><span class="unicode">&#10148;</span></div></button></div>
         <div class="right"><button onclick="window.open('https://www.instagram.com/boiteagants/')"> <span class="unicode">&#128247;&#xFE0E;</span> </button></div>
       </div>
     </article>
@@ -88,11 +88,11 @@
         <?php
         if($page > 1){
           $previous_page = $page - 1;
-          $page_url = 'blog.php?page=' . $previous_page;
+          $page_url = 'blog?page=' . $previous_page;
           ?>
             <div class="center">
               <button onclick="location.href='<?php echo $page_url ; ?>'">
-                <span class="unicode">&#11014;</span>
+                <span class="unicode">&#11014;&#xFE0E;</span>
               </button>
             </div>
           <?php
@@ -139,7 +139,7 @@
     <?php
     if($page < $page_number){
       $next_page = $page + 1;
-      $page_url = 'blog.php?page=' . $next_page;
+      $page_url = 'blog?page=' . $next_page;
       ?>
         <article class="item center full">
           <button onclick="location.href='<?php echo $page_url ; ?>'">
@@ -153,7 +153,7 @@
     <hr>
 
     <article class="item right full">
-      <button onclick="location.href='index.html'"> <span class="unicode">&#10148;</span> </button>
+      <button onclick="location.href='/'"> <span class="unicode">&#10148;&#xFE0E;</span> </button>
     </article>
 
   </section>

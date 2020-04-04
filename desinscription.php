@@ -27,5 +27,5 @@ $user<?php
     $req -> execute();
   }
 
-  header('Location:glock.php');
+  header('Location:glock');
 ?>

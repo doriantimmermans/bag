@@ -1,0 +1,25 @@
+
+# rewrite file extension starts here
+
+# when we try to acces "/page"
+RewriteEngine on
+
+# does not apply to folders (if there is a "/page" folder)
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# check for file of that name with .html extension ("/page.html")
+RewriteCond %{REQUEST_FILENAME}\.html -f
+# rewrite the url as "/page.html"
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# same for .php
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+# with that, we go get the content at "/page.html"
+# but we do not change what is written in the adress bar
+# we can see it as a url converter function
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ /index.php?/$1 [L]
