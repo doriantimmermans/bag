@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>BàG — blog</title>
   <meta name="description" content="La Boite à Gants (BàG) est la récupérathèque de l'École de Recherche Graphique (ERG)">
-  <link rel="shortcut icon" type="image/png" href="assets/favicon3.png"/>
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon3.png"/>
 
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/blog.css">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,10 +88,9 @@
         <?php
         if($page > 1){
           $previous_page = $page - 1;
-          $page_url = 'blog?page=' . $previous_page;
           ?>
             <div class="center">
-              <button onclick="location.href='<?php echo $page_url ; ?>'">
+              <button onclick="location.href='<?php echo '/blog/' . $previous_page ; ?>'">
                 <span class="unicode">&#11014;&#xFE0E;</span>
               </button>
             </div>
@@ -116,7 +115,7 @@
           <h2><?php echo $post['titre'];?></h2>
           <div class="content">
             <div class="image">
-              <?php echo '<img src="img/' . $post['id'] . '.jpg" />'?>
+              <?php echo '<img src="/img/' . $post['id'] . '.jpg" />'?>
             </div>
             <div class="texte">
               <h4><?php echo $post['type'];?></h4>
@@ -139,10 +138,9 @@
     <?php
     if($page < $page_number){
       $next_page = $page + 1;
-      $page_url = 'blog?page=' . $next_page;
       ?>
         <article class="item center full">
-          <button onclick="location.href='<?php echo $page_url ; ?>'">
+          <button onclick="location.href='<?php echo '/blog/' . $next_page ; ?>'">
             <span class="unicode">&#11015;</span>
           </button>
         </article>

@@ -57,9 +57,25 @@
       </button>
     </article>
 
-    <article class="item half">
+    <article class="item third">
       <div class="cadre flex">
-        <article class="item">
+
+        <article class="item full">
+          <h2>Horraires</h2>
+          <table>
+            <?php
+              $horraires = file("infos/horraires.txt");
+              foreach($horraires as $line)  {
+                $line = str_replace("|", "</td><td><i>", $line);
+                echo '<tr>';
+                echo '<td>' . $line . '</i></td>';
+                echo '</tr>';
+              }
+            ?>
+          </table>
+        </article>
+
+        <article class="item full">
           <h2>Accès</h2>
           <p>
             87 rue du Page, <br/>
@@ -68,16 +84,6 @@
           </p>
         </article>
 
-        <article class="item">
-          <h2>Horraires</h2>
-          <table>
-            <tr> <td>lundi</td> <td>fermée</td> </tr>
-            <tr> <td>mardi</td> <td>10h — 16h</td> </tr>
-            <tr> <td>mercredi</td> <td>fermée</td> </tr>
-            <tr> <td>jeudi</td> <td>10h — 18h</td> </tr>
-            <tr> <td>vendredi</td> <td>fermée</td> </tr>
-          </table>
-        </article>
       </div>
     </article>
 
@@ -137,7 +143,7 @@
       </p>
     </article>
 
-    <div id="prix" class="item two-third no-grow">
+    <div id="prix" class="item full">
       <h2>Prix approximatifs</h2>
 
       <div class="scroll-table-container">

@@ -1,25 +1,43 @@
 
-# rewrite file extension starts here
+Options -MultiViews
 
-# when we try to acces "/page"
+# start rewrite engine
 RewriteEngine on
 
-# does not apply to folders (if there is a "/page" folder)
+# internally rewrite "page" to "page.html"
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# check for file of that name with .html extension ("/page.html")
 RewriteCond %{REQUEST_FILENAME}\.html -f
-# rewrite the url as "/page.html"
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-# same for .php
+# internally rewrite "blog/2" to "blog?page=2"
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^blog/([0-9]+) blog.php?page=$1 [NC,L]
+
+# internally rewrite "page" to "page.php"
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 
-# with that, we go get the content at "/page.html"
-# but we do not change what is written in the adress bar
-# we can see it as a url converter function
+# NOTE:
+# [NC]: maj ou pas a pas d importance
+# [L]: les conditions précédente reset et on commence une nouvelle regle
 
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteRule ^(.*)$ /index.php?/$1 [L]
+# le rewrite de blog doit etre avant celui global pour les page php
+# car les rewrites s execute en chaine
+
+# en changeant les url domain/page.php?id=2 devient domain/page/2
+# les liens vers le css, img, etc ne marchent plus car
+# css/main.css est recherche a domain/page/css/main.css (car le lien est relatif)
+# preferable de mettre tt les liens en absolu par rapport au domaine
+# en les faisant commencer par un /
+
+# MultiViews is a kind of default friendly url rewrite
+# we need to desactivate it so we have the control
+
+<Files gestion.php>
+AuthType Basic
+AuthName "Authentication Required"
+AuthUserFile "D:/ERG/Projets/BaG/site_bag/.htpasswd"
+Require valid-user
+</Files>

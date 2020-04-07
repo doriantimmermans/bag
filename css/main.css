@@ -77,10 +77,6 @@ ul{
   padding-left: 0;
 }
 
-table{
-  width: 100%;
-}
-
 .left{
   text-align: left;
 }
@@ -91,11 +87,18 @@ table{
   text-align: right;
 }
 
+table{
+  width: 100%;
+}
 /* --- FORM ART --- */
 .unicode{
   font-family: 'Segoe UI Symbols';
 }
 label{
+  display: block;
+  margin-bottom: 12px;
+}
+textarea{
   display: block;
   margin-bottom: 12px;
 }

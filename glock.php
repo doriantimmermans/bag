@@ -124,7 +124,7 @@
                   </script>
                 </form>
 
-                <form method="post" action="modif.php">
+                <form method="post" action="transaction.php">
                   <input type="hidden" value="<?php echo $user['id']; ?>" name="id" id="id">
                   <input type="number" placeholder="0" name="modif">
                   <button class="center-box" type="submit"><span class="unicode">&#8645;</span></button>

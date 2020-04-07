@@ -59,22 +59,20 @@
         <article class="item two-third">
 
           <h2 class="one-line-flex">
-            <p>Equipe Actuelle</p>
-            <div class="no-grow right"><button id="mail" onclick="location.href='mailto:bag@erg.be'"> <span class="unicode">&#9993;</span> </button></div>
+            <p>Équipe Actuelle</p>
+            <div class="no-grow right"><button id="mail" onclick="location.href='mailto:contact@boiteagants.solutions'"> <span class="unicode">&#9993;</span> </button></div>
           </h2>
 
           <table>
-            <tr> <td> Patxi Endara </td> <td><i> Coordinateur </i></td> </tr>
-            <tr> <td> Joseph Dofny </td> <td><i> Outillage </i></td> </tr>
-            <tr> <td> Marie-Marie Vergne </td> <td><i> Piston </i></td> </tr>
-            <tr> <td> Eddy Pagnier </td> <td><i> Piston </i></td> </tr>
-            <tr> <td> Clara Marcot </td> <td><i> Stock-Manager </i></td> </tr>
-            <tr> <td> Joseph Decroix </td> <td><i> Stock Manager </i></td> </tr>
-            <tr> <td> Benjamin Huynh </td> <td><i> Archives </i></td> </tr>
-            <tr> <td> Elisa Loverix </td> <td><i> Outillage </i></td> </tr>
-            <tr> <td> Simon Raguin </td> <td><i> Graphiste </i></td> </tr>
-            <tr> <td> Nina Six </td> <td><i> Graphiste </i></td> </tr>
-            <tr> <td> Dorian Timmermans </td> <td><i> Graphiste </i></td> </tr>
+            <?php
+              $equipe = file("infos/equipe.txt");
+              foreach($equipe as $line)  {
+                $line = str_replace("|", "</td><td><i>", $line);
+                echo '<tr>';
+                echo '<td>' . $line . '</i></td>';
+                echo '</tr>';
+              }
+            ?>
           </table>
 
         </article>
