@@ -12,11 +12,6 @@
 .header{
   padding-bottom: 12px;
 }
-.header.admin,
-.footer.admin {
-  background: var(--middle);
-  color: white;
-}
 
 .gris{
   background: var(--gradient_right);

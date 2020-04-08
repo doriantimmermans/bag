@@ -20,7 +20,7 @@
     $req->execute();
 
     //get the last inserted ID
-    $id = $bdd->query("SELECT LAST_INSERT_ID()")->fetch()[0];
+    $id = $bdd->lastInsertId();
 
     $action = "Inscription";
 

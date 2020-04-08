@@ -115,13 +115,13 @@
           <h2><?php echo $post['titre'];?></h2>
           <div class="content">
             <div class="image">
-              <?php echo '<img src="/img/' . $post['id'] . '.jpg" />'?>
+              <img src="<?php echo '/' . $post['img_url'] ;?>">
             </div>
             <div class="texte">
               <h4><?php echo $post['type'];?></h4>
               <p>
                 <?php
-                  $text = str_replace("\\n", "<br/>", $post['contenu']);
+                  $text = nl2br($post['contenu']);
                   echo $text;
                 ?>
               </p>

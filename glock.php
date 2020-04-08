@@ -165,10 +165,10 @@
         ?>
       <p>
         <form action="inscription.php" method="POST">
-          <input type="text" name="nom" placeholder="Nom" required></br>
-          <input type="text" name="prenom" placeholder="Prénom" required></br>
-          <input type="email" name="email" placeholder="Email" required></br>
-          <input type="number" name="glocks" placeholder="20&#8370;" required></br>
+          <input type="text" name="nom" placeholder="Nom" required>
+          <input type="text" name="prenom" placeholder="Prénom" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="number" name="glocks" placeholder="20&#8370;" required>
           <button type="submit"><span class="unicode">&#10003;</span></button>
         </form>
       </p>

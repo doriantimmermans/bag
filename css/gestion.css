@@ -1,0 +1,12 @@
+
+.header.admin,
+.footer.admin {
+  background: var(--middle);
+  color: white;
+}
+
+form{
+  background: var(--fill);
+  padding: 18px 12px;
+  margin-bottom: 18px;
+}
