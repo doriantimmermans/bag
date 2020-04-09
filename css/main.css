@@ -245,12 +245,8 @@ hr{
 .colophon{
   margin-top: 72px;
   font-size: 0.75rem;
-  color: white;
+  /* color: white; */
 }
-.colophon a{
-  color: white;
-}
-
 
 /* --- MODAL --- */
 

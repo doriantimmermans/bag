@@ -108,14 +108,15 @@
       <h2>Partenaires</h2>
       <ul>
         <li><a href="https://erg.be/">ERG</a><br>
-        <li><a href="http://federation.recuperatheque.org/">Fédération des récupérathèque</a><br>
-        <li><a href="http://gilbard.be/">Gilbards</a><br>
+        <li><a href="http://federation.recuperatheque.org/">Fédération des récupérathèques</a><br>
+        <li><a href="http://gilbard.be/">Gilbard</a><br>
         <li><a href="https://rotordc.com/">ROTOR DC</a><br>
-        <li><a href="https://www.ares-ac.be/fr/">Académie de Recherche et d'enseignement supérieur</a><br>
-        <li><a href="https://www.foundationfuturegenerations.org/fr">Fondation pour les générations futures</a><br>
-        <li><a href="http://www.stluc-bruxelles.be">Les instituts Saint Luc</a><br>
+        <!-- <li><a href="https://www.ares-ac.be/fr/">Académie de Recherche et d'enseignement supérieur</a><br> -->
+        <!-- <li><a href="https://www.foundationfuturegenerations.org/fr">Fondation pour les générations futures</a><br> -->
+        <li><a href="http://www.stluc-bruxelles.be">Les instituts Saint-Luc</a><br>
         <li><a href="http://green-tech.be">Green Tech</a><br>
-        <li><a href="https://www.ulb.be">ULB</a><br>
+        <li><a href="https://www.cf2d.be/">CF2D</a><br>
+        <li>Le SAS<br>
       </ul>
       <h2>Fondateur.trice.s</h2>
       <ul>
@@ -142,12 +143,12 @@
       </ul>
     </article>
 
-    <article class="item right full colophon">
+    <article class="item center full colophon">
       <p>
-        Site web par Dorian Timmermans en 2020<br/>
-        sur base de l'ancien site lancé par Martin Cabrol en 2018<br/>
-        Logo (sur la page /bag.html) par William Reidiboym et Arthur Halbique.<br/>
-        Font <a href="https://velvetyne.fr/fonts/sporting-grotesque/">Sporting Grotesque</a>.
+        Site web par <a href="mailto:dorian.timmermans@gmail.com">Dorian Timmermans</a> en 2020 <br/><br/>
+        (première version du site lancé par Martin Cabrol en 2018)<br/>
+        Logo (sur la page BàG) par William Reidiboym et Arthur Halbique.<br/>
+        Font <a target="_blank" href="https://velvetyne.fr/fonts/sporting-grotesque/">Sporting Grotesque</a>.
       </p>
     </article>
 

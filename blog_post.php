@@ -47,7 +47,8 @@
     $req->execute();
 
     // update de l'image
-    if(isset($_FILES["image"])){
+    if($_FILES['image']['size'] != 0 && $_FILES['image']['error'] == 0){
+      echo "image";
       // delete l'ancienne image
       unlink($_POST['img_url']);
       // up la nouvelle

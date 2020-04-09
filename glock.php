@@ -93,39 +93,21 @@
               <div class="modif">
 
                 <form class="big" method="post" action="desinscription.php">
-                  <input type="hidden" value="<?php echo $user['id']; ?>" name="id" id="id">
-                  <button id="desinscription_btn" class="center-box" type="button"><span class="unicode">&times</span></button>
+                  <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
+                  <button id="button_<?php echo $user['id']; ?>" class="modal_btn center-box" type="button"><span class="unicode">&times</span></button>
 
                   <!-- boite modal de connection -->
-                  <div id="desinscription" class="modal">
-
+                  <div id="mod_<?php echo $user['id']; ?>" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
                         <label>Voulez-vous vraiment désincrire <strong><?php echo $user['nom'];?> <?php echo $user['prenom'];?></strong> pour toujours? </label>
                         <button type="submit"><span class="unicode">&#10003;</span></button>
                     </div>
                   </div>
-
-                  <script>
-                    var modal = document.getElementById("desinscription");
-                    var btn = document.getElementById("desinscription_btn");
-
-                    // When the user clicks on the button, open the modal
-                    btn.onclick = function() {
-                      modal.style.display = "flex";
-                    }
-
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                      if (event.target == modal) {
-                        modal.style.display = "none";
-                      }
-                    }
-                  </script>
                 </form>
 
                 <form method="post" action="transaction.php">
-                  <input type="hidden" value="<?php echo $user['id']; ?>" name="id" id="id">
+                  <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
                   <input type="number" placeholder="0" name="modif">
                   <button class="center-box" type="submit"><span class="unicode">&#8645;</span></button>
                 </form>
@@ -140,8 +122,36 @@
           $reponse->closeCursor();
         ?>
       </div>
+
+      <script>
+        // setup des modal de désinscription
+
+        var btns = document.getElementsByClassName("modal_btn");
+
+        for(var btn of btns){
+          // When the user clicks on the button, open the modal
+          btn.addEventListener("click", function(){
+            var id = this.id;
+            var new_id = id.replace("button","mod");
+            var m = document.getElementById(new_id);
+            m.style.display = "flex";
+          });
+        }
+
+        var modals = document.getElementsByClassName("modal");
+
+        window.addEventListener("click", function(event){
+          for(var modal of modals){
+            if(event.target == modal){
+              modal.style.display = "none";
+            }
+          }
+        });
+
+      </script>
+
       <p>
-        Les comptes et l'historique sont gardés publiques et transparents, afin de garder une visibilité collective sur l'économie. <br/>
+        Les comptes et l'historique sont gardés publiques et transparents, afin de garder un controle collectif sur l'économie. <br/>
         <!-- permettant ainsi d'avoir un suivis collectif du bon déroulement des permanences,
         cette possibilité de surveillance (non-hierarchisé - ce n'est pas une autorité qui surveille un.e executant) permet en fait d'augmenter l'accessibilité et la diversité de personnes pouvant executer ses transactions
         car un suivis collectif par tt le monde est en permanence possible -->
@@ -227,7 +237,7 @@
 
       <p>
         La session admin permet d'inscrire et de désinscrire des usager.ère.s,
-        ainsi que de procéder aux transactions de Glocks.
+        ainsi que de procéder aux transactions.
       </p>
 
       <?php

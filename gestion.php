@@ -51,17 +51,17 @@
 
   <section class="container flex">
 
-    <!-- <article class="item full">
+    <article class="item full">
       <button onclick="location.href='/'">
         <div><span class="unicode">&#127968;</span></div>
       </button>
-    </article> -->
+    </article>
 
     <article class="item half">
       <h2>Horraires</h2>
       <form action="modify_infos.php" method="POST">
         <input type="hidden" name="filename" value="horraires">
-        <textarea rows="10" cols="50" name="txt"><?php include('infos/horraires.txt'); ?></textarea>
+        <textarea rows="5" cols="50" name="txt"><?php include('infos/horraires.txt'); ?></textarea>
         <button type="submit"><span class="unicode">&#8634;</span></button>
       </form>
     </article>
@@ -70,7 +70,7 @@
       <h2>Équipe</h2>
       <form action="modify_infos.php" method="POST">
         <input type="hidden" name="filename" value="equipe">
-        <textarea rows="10" cols="50" name="txt"><?php include('infos/equipe.txt'); ?></textarea>
+        <textarea rows="5" cols="50" name="txt"><?php include('infos/equipe.txt'); ?></textarea>
         <button type="submit"><span class="unicode">&#8634;</span></button>
       </form>
     </article>
@@ -84,7 +84,7 @@
 
     <hr/>
 
-    <article class="item two-third">
+    <article class="item half">
       <h2>Publier un post sur le Blog</h2>
       <form action="blog_post.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="Titre" required>
@@ -104,7 +104,7 @@
       </p>
     </article>
 
-    <article class="item two-third" id="modify">
+    <article class="item half" id="modify">
       <h2>Modifier un post sur le Blog</h2>
 
       <?php

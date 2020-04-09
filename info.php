@@ -78,8 +78,7 @@
         <article class="item full">
           <h2>Accès</h2>
           <p>
-            87 rue du Page, <br/>
-            1050 Bruxelles,  <br/>
+            87 rue du Page, 1050 Bruxelles,  <br/>
             sur le plateau art.
           </p>
         </article>
@@ -90,18 +89,19 @@
     <article class="item half">
       <h2>Local</h2>
       <p>
-        La BàG dispose de son propre espace de stockage de matériaux.
-        Ces matériaux sont triés, reconditionnés et si nécessaire, répertoriés.
+        La BàG dispose de son propre espace de stockage et de vente de matériaux dans l'infrastructure de l'école.
+        Les matériaux récupérés sont reconditionnés, triés, et si nécessaire, répertoriés.
       <p>
       <p>
         Ceux-ci sont issus de récoltes effectuées au sein de
-        l’école, donnés ou abandonnés par les étudiant.e.s.
+        l’école: donnés ou abandonnés par les étudiant.e.s.
         Mais aussi en dehors de l’enceinte scolaire: en rue,
         via des partenaires (entreprises, collectifs, commerces,
         etc...).
       </p>
       <p>
-        Le local est utilisé comme magasin de matériaux, lors des heures d'ouverture.
+        Lors des heures d'ouverture, des permanences sont assurées et le local
+        est accessible pour venir y prendre ou donner des matériaux en utilisant la monnaie de la BàG, le Glock.
       <p>
     </article>
 
@@ -122,7 +122,6 @@
        </p>
        <p>
          Ce fonctionnement permet d’effacer ou de réduire les disparités de pouvoir d’achat entre les étudiant.e.s.
-         Les questions de partage, de solidarité et d’échanges sont également des valeurs essentielles à ce projet.
       </p>
     </article>
 
@@ -139,7 +138,7 @@
         <span class="unicode arrow"></span> si vous êtes étudiant.e.s et voulez gagnez des &#8370; en participant au fonctionnement de la BàG.
       </p>
       <p>
-        <span class="unicode arrow"></span> si vous voulez organisez des workshops, évenements, ou collaborez sur un projet.
+        <span class="unicode arrow"></span> si vous voulez organiser des workshops, évenements, ou collaborer sur un projet.
       </p>
     </article>
 

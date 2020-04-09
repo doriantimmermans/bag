@@ -74,9 +74,7 @@
         $page = 1;
       }
       $post_per_page = 3;
-      $start = ($page-1) * $post_per_page;
-      $end = $start + $post_per_page;
-      // echo $start . ',  ' . $end;
+      $off = ($page-1) * $post_per_page;
       $page_number = ceil($post_number / $post_per_page);
     ?>
 
@@ -103,9 +101,9 @@
 
 
     <?php
-    $posts = $bdd -> prepare('SELECT *, date, DATE_FORMAT(date, \'%d/%m/%Y\') date_fr FROM blog ORDER BY date DESC LIMIT :strt, :nd;');
-    $posts -> bindParam(':strt', $start, PDO::PARAM_INT);
-    $posts -> bindParam(':nd', $end, PDO::PARAM_INT);
+    $posts = $bdd -> prepare('SELECT *, date, DATE_FORMAT(date, \'%d/%m/%Y\') date_fr FROM blog ORDER BY date DESC LIMIT :lim OFFSET :off;');
+    $posts -> bindParam(':lim', $post_per_page, PDO::PARAM_INT);
+    $posts -> bindParam(':off', $off, PDO::PARAM_INT);
     $posts -> execute();
 
     while ($post = $posts->fetch()){?>
