@@ -66,10 +66,13 @@
             <?php
               $horraires = file("infos/horraires.txt");
               foreach($horraires as $line)  {
-                $line = str_replace("|", "</td><td><i>", $line);
-                echo '<tr>';
-                echo '<td>' . $line . '</i></td>';
-                echo '</tr>';
+                $line = explode("|", $line);
+                if(count($line)==2){
+                  echo '<tr>';
+                  echo '<td>' . $line[0] . '</td>';
+                  echo '<td><i>' . $line[1] . '</i></td>';
+                  echo '</tr>';
+                }
               }
             ?>
           </table>

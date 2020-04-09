@@ -67,10 +67,13 @@
             <?php
               $equipe = file("infos/equipe.txt");
               foreach($equipe as $line)  {
-                $line = str_replace("|", "</td><td><i>", $line);
-                echo '<tr>';
-                echo '<td>' . $line . '</i></td>';
-                echo '</tr>';
+                $line = explode("|", $line);
+                if(count($line)==2){
+                  echo '<tr>';
+                  echo '<td>' . $line[0] . '</td>';
+                  echo '<td><i>' . $line[1] . '</i></td>';
+                  echo '</tr>';
+                }
               }
             ?>
           </table>
@@ -80,11 +83,12 @@
         <article class="item full">
           <h2>Encadrant.e.s</h2>
           <ul>
-            <li> Ivo Provoost
-            <li> Simona Denicolai
-            <li> Frederic Gaillard
-            <li> Marie Feyereisen
-            <li> François De Jonge
+            <?php
+            $encadrantes = file("infos/encadrantes.txt");
+            foreach($encadrantes as $line)  {
+              echo '<li>' . $line;
+            }
+            ?>
           </ul>
         </article>
         <article class="item full">
@@ -100,23 +104,27 @@
     </article>
 
     <article class="item half">
+      <h2>Partenaires</h2>
+      <ul>
+        <?php
+          $partenariats = file("infos/partenariats.txt");
+          foreach($partenariats as $line)  {
+            $line = explode("|", $line);
+            if(count($line)==2){
+              echo '<li>';
+              echo '<a target="_blank" href="' . $line[1] . '">' . $line[0] . '</a>';
+            }
+            else if(count($line)==1){
+              echo '<li>';
+              echo  $line[0];
+            }
+          }
+        ?>
+      </ul>
       <h2>Contacts extérieurs</h2>
       <ul>
         <li> <a href="mailto:lemaistre@gmx.com">Albert Lemaistre</a> - ancien "Gérant" de la BàG
         <li> <a href="mailto:olivier.milis3@gmail.com">Olivier Milis</a> - fédération des récupérathèques et intervenant à la BàG
-      </ul>
-      <h2>Partenaires</h2>
-      <ul>
-        <li><a href="https://erg.be/">ERG</a><br>
-        <li><a href="http://federation.recuperatheque.org/">Fédération des récupérathèques</a><br>
-        <li><a href="http://gilbard.be/">Gilbard</a><br>
-        <li><a href="https://rotordc.com/">ROTOR DC</a><br>
-        <!-- <li><a href="https://www.ares-ac.be/fr/">Académie de Recherche et d'enseignement supérieur</a><br> -->
-        <!-- <li><a href="https://www.foundationfuturegenerations.org/fr">Fondation pour les générations futures</a><br> -->
-        <li><a href="http://www.stluc-bruxelles.be">Les instituts Saint-Luc</a><br>
-        <li><a href="http://green-tech.be">Green Tech</a><br>
-        <li><a href="https://www.cf2d.be/">CF2D</a><br>
-        <li>Le SAS<br>
       </ul>
       <h2>Fondateur.trice.s</h2>
       <ul>

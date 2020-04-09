@@ -57,28 +57,47 @@
       </button>
     </article>
 
-    <article class="item half">
-      <h2>Horraires</h2>
-      <form action="modify_infos.php" method="POST">
-        <input type="hidden" name="filename" value="horraires">
-        <textarea rows="5" cols="50" name="txt"><?php include('infos/horraires.txt'); ?></textarea>
-        <button type="submit"><span class="unicode">&#8634;</span></button>
-      </form>
-    </article>
+    <article class="item half" id="modify_info">
+      <h2>Modifier les Infos</h2>
 
-    <article class="item half">
-      <h2>Équipe</h2>
-      <form action="modify_infos.php" method="POST">
-        <input type="hidden" name="filename" value="equipe">
-        <textarea rows="5" cols="50" name="txt"><?php include('infos/equipe.txt'); ?></textarea>
-        <button type="submit"><span class="unicode">&#8634;</span></button>
-      </form>
-    </article>
+      <?php
+        $infos = ["horraires" => "Horraires",
+                  "equipe" => "Équipe",
+                  "encadrantes" => "Encadrant.e.s",
+                  "partenariats" => "Partenariats"];
+      ?>
 
-    <article class="item full">
+      <form action="gestion.php" method="GET">
+        <label>Selectionner les infos à modifier</label>
+        <select name="info_name">
+          <?php
+            foreach ($infos as $info_name => $info_text) {
+              ?>
+              <option <?php if(isset($_GET['info_name']) && $_GET['info_name']==$info_name) echo 'selected' ?> value="<?php echo $info_name; ?>" >
+                <?php echo $info_text; ?>
+              </option>
+            <?php
+            }
+            ?>
+        </select>
+        <button type="submit"><span class="unicode">&#8594;</span></button>
+      </form>
+
+      <?php
+      if(isset($_GET['info_name'])){
+        ?>
+        <form action="modify_infos.php" method="POST">
+          <input type="hidden" name="filename" value="<?php echo $_GET['info_name']; ?>">
+          <textarea rows="5" cols="50" name="txt"><?php include('infos/' . $_GET['info_name'] . '.txt'); ?></textarea>
+          <button type="submit"><span class="unicode">&#8634;</span></button>
+        </form>
+        <?php
+        }
+      ?>
+
       <p>
-        <b>Note:</b> le caractère " | " est nécéssaire pour de créer une tabulation dans la mise en page du site. <br/>
-        Il faut le laisser entre les jours | horraires et les noms | rôles dans les boites de textes ci-dessus.
+        <b>Note:</b> le caractère " | " est nécéssaire pour de créer une tabulation ou des liens dans la mise en page du site. <br/>
+        Il faut le laisser entre les jours | horraires, les noms | rôles et les partenariats | sites web, dans les boites de textes ci-dessus.
       </p>
     </article>
 
@@ -104,14 +123,14 @@
       </p>
     </article>
 
-    <article class="item half" id="modify">
+    <article class="item half" id="modify_blog">
       <h2>Modifier un post sur le Blog</h2>
 
       <?php
         //on récupère le post selectionné à modifier
-        if(isset($_GET['mod_id'])){
+        if(isset($_GET['post_id'])){
           $tomodreq = $bdd -> prepare('SELECT *, id, DATE_FORMAT(date, \'%d/%m/%Y\') date_fr FROM blog WHERE id=:id');
-          $tomodreq -> bindParam(':id', $_GET['mod_id'], PDO::PARAM_INT);
+          $tomodreq -> bindParam(':id', $_GET['post_id'], PDO::PARAM_INT);
           $tomodreq -> execute();
           $tomod = $tomodreq->fetch();
         }
@@ -119,14 +138,14 @@
 
       <form action="gestion.php" method="GET">
         <label>Selectionner le post à modifier</label>
-        <select name="mod_id">
+        <select name="post_id">
         <?php
           //on récupère tt les posts
           //et on montre leurs titres dans un select
           $posts = $bdd -> query('SELECT *, date FROM blog ORDER BY date DESC');
           while ($post = $posts->fetch()){
         ?>
-          <option <?php if(isset($_GET['mod_id']) && $post['id']==$tomod['id']) echo 'selected' ?> value=<?php echo $post['id']; ?> >
+          <option <?php if(isset($_GET['post_id']) && $post['id']==$tomod['id']) echo 'selected' ?> value=<?php echo $post['id']; ?> >
              <?php echo $post['titre']?>
           </option>
           <?php
@@ -138,7 +157,7 @@
 
       <?php
         //on affiche les input du post à modifier
-        if(isset($_GET['mod_id'])){
+        if(isset($_GET['post_id'])){
           ?>
 
           <form action="blog_post.php" method="POST" enctype="multipart/form-data">
@@ -169,19 +188,26 @@
     </article>
 
     <script>
-      // scroll to modify section if selected
       var href = window.location.href;
-      var modify = document.getElementById('modify');
-      if(href.includes("mod_id")){
-        modify.scrollIntoView();
+
+      // scroll to modify info section if selected
+      var info = document.getElementById('modify_info');
+      if(href.includes("info_name")){
+        info.scrollIntoView();
+      }
+
+      // scroll to modify blog section if selected
+      var blog = document.getElementById('modify_blog');
+      if(href.includes("post_id")){
+        blog.scrollIntoView();
       }
     </script>
 
-    <!-- <article class="item full right">
+    <article class="item full right">
       <button onclick="location.href='/'">
         <div><span class="unicode">&#127968;</span></div>
       </button>
-    </article> -->
+    </article>
 
   </section>
 
