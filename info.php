@@ -51,16 +51,15 @@
 
   <main class="container flex">
 
-    <article class="item full">
+    <article class="padding full">
       <button onclick="location.href='/'">
         <div class="rot"><span class="unicode">&#10148;</span></div>
       </button>
     </article>
 
-    <article class="item third">
+    <article class="padding full">
       <div class="cadre flex">
-
-        <article class="item full">
+        <article class="padding half">
           <h2>Horraires</h2>
           <table>
             <?php
@@ -77,19 +76,17 @@
             ?>
           </table>
         </article>
-
-        <article class="item full">
+        <article class="padding half">
           <h2>Accès</h2>
           <p>
             87 rue du Page, 1050 Bruxelles,  <br/>
             sur le plateau art.
           </p>
         </article>
-
       </div>
     </article>
 
-    <article class="item half">
+    <article class="padding third">
       <h2>Local</h2>
       <p>
         La BàG dispose de son propre espace de stockage et de vente de matériaux dans l'infrastructure de l'école.
@@ -108,44 +105,44 @@
       <p>
     </article>
 
-    <article class="item half">
+    <article class="padding third">
       <h2>Gagner des &#8370;</h2>
       <p>
         On peut acquérir des Glocks en alimentant la Boîtes à Gants en matériaux,
         mais aussi en s’impliquant dans la gestion de la BàG (permanences, gestion, reconditionnement, ...).
       </p>
       <p>
-         <span class="unicode arrow"></span> A l'inscription (gratuite), 20 Glocks sont offerts.
+         <span class="unicode arrow">&rarr;</span> A l'inscription (gratuite), 20 Glocks sont offerts.
       </p>
        <p>
-         <span class="unicode arrow"></span> Les matériaux ramenés à la BàG offrent autant de Glocks que le prix auxquels ils seront revendus.
+         <span class="unicode arrow">&rarr;</span> Les matériaux ramenés à la BàG offrent autant de Glocks que le prix auxquels ils seront revendus.
        </p>
        <p>
-         <span class="unicode arrow"></span> Les permanences d'ouverture de la BàG sont rémunérées à 10&#8370; l'heure.
+         <span class="unicode arrow">&rarr;</span> Les permanences d'ouverture de la BàG sont rémunérées à 10&#8370; l'heure.
        </p>
        <p>
          Ce fonctionnement permet d’effacer ou de réduire les disparités de pouvoir d’achat entre les étudiant.e.s.
       </p>
     </article>
 
-    <article class="item half">
+    <article class="padding third">
       <h2>Interdépendance</h2>
       <p>
         L'existence et la disponibilité de la BàG repose sur la participation de ses usager.ère.s.
         N'hésitez pas à nous <a href="equipe.php">contacter</a> (en tant que personne, entreprise, atelier, asbl, collectif, ...) si:
       </p>
       <p>
-        <span class="unicode arrow"></span> si vous avez du materiel ou des chutes à donner dont vous voulez vous débarrassez.
+        <span class="unicode arrow">&rarr;</span> si vous avez du materiel ou des chutes à donner dont vous voulez vous débarrassez.
       </p>
       <p>
-        <span class="unicode arrow"></span> si vous êtes étudiant.e.s et voulez gagnez des &#8370; en participant au fonctionnement de la BàG.
+        <span class="unicode arrow">&rarr;</span> si vous êtes étudiant.e.s et voulez gagnez des &#8370; en participant au fonctionnement de la BàG.
       </p>
       <p>
-        <span class="unicode arrow"></span> si vous voulez organiser des workshops, évenements, ou collaborer sur un projet.
+        <span class="unicode arrow">&rarr;</span> si vous voulez organiser des workshops, évenements, ou collaborer sur un projet.
       </p>
     </article>
 
-    <div id="prix" class="item full">
+    <div id="prix" class="padding full">
       <h2>Prix approximatifs</h2>
 
       <div class="scroll-table-container">
@@ -236,7 +233,7 @@
 
     </div>
 
-    <article class="item right full">
+    <article class="padding right full">
       <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 

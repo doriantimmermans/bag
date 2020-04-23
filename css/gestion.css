@@ -7,6 +7,8 @@
 
 form{
   background: var(--fill);
+  border-top: 6px outset;
+  border-color: var(--border);
   padding: 18px 12px;
   margin-bottom: 18px;
 }

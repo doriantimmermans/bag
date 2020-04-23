@@ -1,7 +1,7 @@
 :root {
-  --orange: orangered;
+  --colortheme: orangered;
   /* color theme */
-  --textc: gainsboro;
+  --textonct: gainsboro;
   /* text color when it's on the color theme */
 
   --border: white;
@@ -13,7 +13,6 @@
 
   --gradient: linear-gradient(whitesmoke, gainsboro);
   --gradient_right: linear-gradient(to right, whitesmoke, gainsboro);
-  --gradient_trans: linear-gradient(whitesmoke, transparent);
 }
 
 
@@ -66,15 +65,16 @@ a:hover{
   color: white;
   text-shadow: 0 0 0.5em white;
 }
-
 *::selection{
-    background-color: var(--orange);
-    color: var(--textc);
+    background-color: var(--colortheme);
+    color: var(--textonct);
 }
-
 ul{
   list-style: none;
   padding-left: 0;
+}
+table{
+  width: 100%;
 }
 
 .left{
@@ -87,11 +87,14 @@ ul{
   text-align: right;
 }
 
-table{
-  width: 100%;
+#colophon{
+  margin-top: 72px;
+  font-size: 0.8rem;
+  font-family: monospace;
 }
-/* --- FORM ART --- */
 
+
+/* --- FORM ART --- */
 .unicode{
   font-family: 'Segoe UI Symbols';
 }
@@ -111,15 +114,15 @@ input, select, textarea {
   margin-bottom: 24px;
   font-family: monospace;
 }
-select option:hover {
-  /* background-color: var(--orange) !important; */
+hr{
+  flex-basis: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px outset;
+  border-color: var(--border);
+  padding: 0;
+  margin: 1em 1em;
 }
-
-.input-info{
-  font-size: 0.7rem;
-}
-
-
 button{
   padding: 4px 18px;
   font-weight: bold;
@@ -143,7 +146,6 @@ button:hover{
 button .rot{
   transform: rotate(-180deg);
 }
-
 button.small-button{
   /* small et rounded button */
   font-size: 1rem;
@@ -160,19 +162,7 @@ button.small-button{
   align-items: center;
 }
 
-
-hr{
-  width: 100%;
-  box-sizing: border-box;
-  border: 3px outset;
-  border-color: var(--border);
-  padding: 0;
-  margin: 1em 1em;
-}
-
-.arrow:after{
-  font-family: 'Verdana';
-  content: "\2192";
+.arrow{
   font-size: 1.5rem;
   position: relative;
   bottom: -0.15rem;
@@ -187,7 +177,19 @@ hr{
   margin: 0 2em;
 }
 
+.cadre{
+  background: var(--fill);
+  border: 12px ridge;
+  border-color: var(--border);
+  box-sizing: border-box;
+  height: 100%;
+}
+
 /* --- FLEX --- */
+
+.padding {
+  padding: 0.5em 1em;
+}
 
 .container{
   margin: 2em auto;
@@ -198,76 +200,57 @@ hr{
   display: flex;
   flex-wrap: wrap;
 }
-.item {
+
+/* by default items are 33% desk, 50% on tablet, 100% mobile */
+.flex > *{
   flex-basis: 100%;
+  box-sizing: border-box;
   flex-grow: 1;
-  padding: 0.5em 1em;
-  box-sizing: border-box;
-}
-.cadre{
-  background: var(--fill);
-  border: 12px ridge;
-  border-color: var(--border);
-  box-sizing: border-box;
-  height: 100%;
-}
-
-
-.item.quarter{
-  flex-basis: 50%;
 }
 @media all and (min-width: 601px) {
-  .item {
+  .flex > *{
     flex-basis: 50%;
   }
-  .item.quarter{
-    flex-basis: 25%;
+  .flex > .third{
+    flex-basis: 33%;
   }
-  .item.half{
+  .flex > .half{
     flex-basis: 50%;
   }
-  .item.two-third{
+  .flex > .two-third{
     flex-basis: 66%;
   }
-  .item.full{
+  .flex > .full{
     flex-basis: 100%;
   }
 }
 @media all and (min-width: 993px) {
-  .item {
+  .flex > *{
     flex-basis: 33%;
   }
-  .item.quarter{
-    flex-basis: 25%;
+  .flex > .third{
+    flex-basis: 33%;
   }
-  .item.half{
+  .flex > .half{
     flex-basis: 50%;
   }
-  .item.two-third{
+  .flex > .two-third{
     flex-basis: 66%;
   }
-  .item.full{
+  .flex > .full{
     flex-basis: 100%;
   }
 }
 
-
+.no-grow{
+  flex-grow: 0;
+}
 .one-line-flex{
   display: flex;
   align-items: center;
 }
 .one-line-flex > *{
   flex: 1 0 0%;
-}
-
-.no-grow{
-  flex-grow: 0;
-}
-
-.colophon{
-  margin-top: 72px;
-  font-size: 0.75rem;
-  /* color: white; */
 }
 
 /* --- MODAL --- */

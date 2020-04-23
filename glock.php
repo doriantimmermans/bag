@@ -59,7 +59,7 @@
 
   <main class="container flex">
 
-    <article class="item full">
+    <article class="padding full">
       <button onclick="location.href='/'">
         <div class="rot"><span class="unicode">&#10148;</span></div>
       </button>
@@ -67,7 +67,7 @@
 
     <!-- COMPTES PRINTING -->
 
-    <article class="item two-third" >
+    <article class="padding two-third" >
       <h2>Comptes</h2>
 
       <input type="text" id="myInput" onkeyup="recherche()" placeholder="Rechercher">
@@ -151,7 +151,7 @@
       </script>
 
       <p>
-        Les comptes et l'historique sont gardés publiques et transparents, afin de garder un controle collectif sur l'économie. <br/>
+        Les comptes et l'historique sont gardés publiques, par soucis de transparence afin de permettre un controle collectif sur l'économie. <br/>
         <!-- permettant ainsi d'avoir un suivis collectif du bon déroulement des permanences,
         cette possibilité de surveillance (non-hierarchisé - ce n'est pas une autorité qui surveille un.e executant) permet en fait d'augmenter l'accessibilité et la diversité de personnes pouvant executer ses transactions
         car un suivis collectif par tt le monde est en permanence possible -->
@@ -160,7 +160,7 @@
 
     <!-- INSCRIPTION PRINTING -->
 
-    <article class="item">
+    <article class="padding">
       <h2>Inscription</h2>
       <?php
       if(!isset($_SESSION['admin'])){
@@ -192,7 +192,7 @@
 
     <!-- HISTORIQUE PRINTING -->
 
-    <article class="item two-third" >
+    <article class="padding two-third" >
 
       <h2>Historique</h2>
 
@@ -208,6 +208,7 @@
 
             <tr>
               <td class="left">
+                <span class="unicode">&rarr;</span>
               <?php
               echo  $journal['action'] ;
               if($journal['action']=="Ajout" or $journal['action']=="Décompte"){ echo ' à '; }
@@ -215,7 +216,7 @@
               echo '<strong>' . $journal['nom'] . ' ' . $journal['prenom'] . '</strong>';
               if($journal['action']=="Ajout" or $journal['action']=="Décompte"){ echo ' de '; }
               else{ echo ' avec '; }
-              echo $journal['glocks'] . ' Glocks';
+              echo $journal['glocks'] . ' Glocks <br/>';
               echo ' le ' . $journal['date_fr'];
               echo ' à ' . $journal['heure'];
               ?>
@@ -232,7 +233,7 @@
 
     <!-- SESSION ADMIN PRINTING -->
 
-    <article class="item">
+    <article class="padding">
       <h2>Admin</h2>
 
       <p>
@@ -287,7 +288,7 @@
       ?>
       </article>
 
-    <article class="item right full">
+    <article class="padding right full">
       <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 

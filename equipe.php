@@ -47,16 +47,16 @@
 
   <main class="container flex">
 
-    <article class="item full">
+    <article class="padding full">
       <button onclick="location.href='/'">
         <div class="rot"><span class="unicode">&#10148;</span></div>
       </button>
     </article>
 
-    <article class="item half">
+    <article class="padding half">
       <div class="cadre flex">
 
-        <article class="item two-third">
+        <article class="padding two-third">
 
           <h2 class="one-line-flex">
             <p>Équipe Actuelle</p>
@@ -80,7 +80,7 @@
 
         </article>
 
-        <article class="item full">
+        <article class="padding full">
           <h2>Encadrant.e.s</h2>
           <ul>
             <?php
@@ -91,7 +91,7 @@
             ?>
           </ul>
         </article>
-        <article class="item full">
+        <article class="padding full">
         <p>
           <span class="unicode arrow"></span> L'équipe de la BàG est renouvellée chaque année.
           Depuis 2019-2020, un cour de l'ERG est entièrement dédié
@@ -103,7 +103,7 @@
       </div>
     </article>
 
-    <article class="item half">
+    <article class="padding half">
       <h2>Partenaires</h2>
       <ul>
         <?php
@@ -151,7 +151,7 @@
       </ul>
     </article>
 
-    <article class="item center full colophon">
+    <article id="colophon" class="padding center full">
       <p>
         Site web par <a href="mailto:dorian.timmermans@gmail.com">Dorian Timmermans</a> en 2020 <br/><br/>
         (première version du site lancé par Martin Cabrol en 2018)<br/>
@@ -160,7 +160,7 @@
       </p>
     </article>
 
-    <article class="item right full">
+    <article class="padding right full">
       <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 

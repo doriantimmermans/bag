@@ -28,8 +28,8 @@
 }
 
 .bande.even{
-  background: var(--orange);
-  color: var(--textc);
+  background: var(--colortheme);
+  color: var(--textonct);
 }
 
 .bande:hover{

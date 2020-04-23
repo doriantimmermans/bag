@@ -3,8 +3,8 @@
 
 .header,
 .footer {
-  background: var(--orange);
-  color: var(--textc);
+  background: var(--colortheme);
+  color: var(--textonct);
 
   text-align: center;
   overflow: auto;

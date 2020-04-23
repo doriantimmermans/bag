@@ -55,7 +55,7 @@
 
   <main class="container flex">
 
-    <article class="item full">
+    <article class="padding full">
       <div class="one-line-flex">
         <div><button onclick="location.href='/'"><div class="rot"><span class="unicode">&#10148;</span></div></button></div>
         <div class="right"><button onclick="window.open('https://www.instagram.com/boiteagants/')"> <span class="unicode">&#128247;&#xFE0E;</span> </button></div>
@@ -78,9 +78,9 @@
       $page_number = ceil($post_number / $post_per_page);
     ?>
 
-    <hr>
+    <hr class="full"/>
 
-    <article class="item full">
+    <article class="padding full">
       <div class="one-line-flex same-size">
         <h3 id="page_number">Page <?php echo $page; ?></h3>
         <?php
@@ -108,7 +108,7 @@
 
     while ($post = $posts->fetch()){?>
 
-      <article class="item full">
+      <article class="padding full">
         <div class="blog-post">
           <h2><?php echo $post['titre'];?></h2>
           <div class="content">
@@ -117,15 +117,15 @@
             </div>
             <div class="texte">
               <h4><?php echo $post['type'];?></h4>
-              <p>
+              <p class="main-text">
                 <?php
                   $text = nl2br($post['contenu']);
                   echo $text;
                 ?>
               </p>
+              <p class='date'><?php echo $post['date_fr'];?></p>
             </div>
           </div>
-          <p class='date'><?php echo $post['date_fr'];?></p>
         </div>
       </article>
 
@@ -137,7 +137,7 @@
     if($page < $page_number){
       $next_page = $page + 1;
       ?>
-        <article class="item center full">
+        <article class="padding center full">
           <button onclick="location.href='<?php echo '/blog.php?page=' . $next_page ; ?>'">
             <span class="unicode">&#11015;</span>
           </button>
@@ -146,9 +146,9 @@
     }
     ?>
 
-    <hr>
+    <hr class="full"/>
 
-    <article class="item right full">
+    <article class="padding right full">
       <button onclick="location.href='/'"> <span class="unicode">&#10148;&#xFE0E;</span> </button>
     </article>
 

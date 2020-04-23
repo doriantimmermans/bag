@@ -18,8 +18,8 @@
   font-family: monospace;
 }
 .data-table tr:hover{
-  background-color: var(--orange);
-  color: var(--textc);
+  background-color: var(--colortheme);
+  color: var(--textonct);
 }
 .data-table th{
   text-align: center;
@@ -59,7 +59,7 @@
   color: inherit;
 }
 #prix tr:nth-child(even){
-  background-color: gainsboro;
+  background-color: var(--middle);
 }
 
 
@@ -75,8 +75,8 @@
   height: 50vh;
 }
 .flex-table .line:hover {
-  background-color: var(--orange);
-  color: var(--textc);
+  background-color: var(--colortheme);
+  color: var(--textonct);
 }
 #comptes .line{
   padding: 6px 12px;

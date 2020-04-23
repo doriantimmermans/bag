@@ -52,13 +52,13 @@
 
   <main class="container flex">
 
-    <article class="item full">
+    <article class="padding full">
       <button onclick="location.href='/'">
         <div><span class="unicode">&#127968;</span></div>
       </button>
     </article>
 
-    <article class="item half" id="modify_info">
+    <article class="padding full" id="modify_info">
       <h2>Modifier les Infos</h2>
 
       <?php
@@ -102,9 +102,9 @@
       </p>
     </article>
 
-    <hr/>
+    <hr class="full"/>
 
-    <article class="item half">
+    <article class="padding half">
       <h2>Publier un post sur le Blog</h2>
       <form action="blog_post.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="titre" placeholder="Titre" required>
@@ -124,7 +124,7 @@
       </p>
     </article>
 
-    <article class="item half" id="modify_blog">
+    <article class="padding half" id="modify_blog">
       <h2>Modifier un post sur le Blog</h2>
 
       <?php
@@ -204,11 +204,11 @@
       }
     </script>
 
-    <hr>
+    <hr class="full"/>
 
     <!-- STATISTIQUES PRINTING -->
 
-    <article class="item full">
+    <article class="padding full">
 
       <h2>Statistiques</h2>
 
@@ -263,7 +263,7 @@
 
     </article>
 
-    <article class="item full right">
+    <article class="padding full right">
       <button onclick="location.href='/'">
         <div><span class="unicode">&#127968;</span></div>
       </button>
