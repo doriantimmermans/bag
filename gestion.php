@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/gestion.css">
+  <link rel="stylesheet" href="/css/tables.css">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +50,7 @@
       </h3>
   </header>
 
-  <section class="container flex">
+  <main class="container flex">
 
     <article class="item full">
       <button onclick="location.href='/'">
@@ -203,13 +204,72 @@
       }
     </script>
 
+    <hr>
+
+    <!-- STATISTIQUES PRINTING -->
+
+    <article class="item full">
+
+      <h2>Statistiques</h2>
+
+      <div class="scroll-table-container">
+        <table id="stat" class="data-table">
+          <tr>
+            <th>Jours</th>
+            <th>Inscr.</th>
+            <th>Ventes</th>
+            <th>Entrées</th>
+            <th>Total</th>
+          </tr>
+
+        <?php
+          // entrées sorties
+          $reponse = $bdd->query(
+          'SELECT
+            COUNT(CASE WHEN action="Inscription" THEN 1 ELSE NULL END) as inscriptions,
+            SUM(CASE WHEN action="Décompte" THEN glocks ELSE 0 END) as ventes,
+            SUM(CASE WHEN action="Ajout" THEN glocks ELSE 0 END) as entrées,
+            SUM(CASE WHEN action="Ajout" OR action="Décompte" THEN glocks ELSE 0 END) as Total,
+            COUNT(CASE WHEN action="Décompte"THEN 1 ELSE NULL END) as ventes_trans,
+            COUNT(CASE WHEN action="Ajout" THEN 1 ELSE NULL END) as entrées_trans,
+            COUNT(CASE WHEN action="Ajout" OR action="Décompte" THEN 1 ELSE NULL END) as total_trans,
+            date,
+            DATE_FORMAT(date, \'%Y/%m/%d\') day,
+            DATE_FORMAT(date, \'%d/%m/%y\') day_fr
+          FROM journal
+          GROUP BY day
+          ORDER BY day
+          DESC');
+
+          while ($stat = $reponse->fetch()){?>
+            <tr>
+              <td class="left"> <?php echo $stat['day_fr'] ?> </td>
+              <td> <?php echo $stat['inscriptions'] ?> </td>
+              <td> <?php echo $stat['ventes'] ?>&#8370; (<?php echo $stat['ventes_trans'] ?> trans.) </td>
+              <td> <?php echo $stat['entrées'] ?>&#8370; (<?php echo $stat['entrées_trans'] ?> trans.)</td>
+              <td> <?php echo $stat['Total'] ?>&#8370; (<?php echo $stat['total_trans'] ?> trans.) </td>
+            </tr>
+            <?php
+          }
+        ?>
+      </table>
+    </div>
+
+    <p>
+      <b>ventes:</b> glocks retirés aux usager.ère.s pour achat. <br/>
+      <b>entrées:</b> glocks donnés aux usager.ère.s pour don de matériel ou service. <br/>
+      <b>trans.:</b> nombre de transaction.
+    </p>
+
+    </article>
+
     <article class="item full right">
       <button onclick="location.href='/'">
         <div><span class="unicode">&#127968;</span></div>
       </button>
     </article>
 
-  </section>
+  </main>
 
   <footer class="footer admin">
       <div class="marquee">

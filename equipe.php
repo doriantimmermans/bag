@@ -45,7 +45,7 @@
         Elle regroupe des pratiques variées et perméables entre-elles</h3>
   </header>
 
-  <section class="container flex">
+  <main class="container flex">
 
     <article class="item full">
       <button onclick="location.href='/'">
@@ -164,7 +164,7 @@
       <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 
-  </section>
+  </main>
 
   <footer class="footer">
       <div class="marquee">

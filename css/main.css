@@ -114,9 +114,12 @@ input, select, textarea {
 select option:hover {
   /* background-color: var(--orange) !important; */
 }
+
 .input-info{
   font-size: 0.7rem;
 }
+
+
 button{
   padding: 4px 18px;
   font-weight: bold;
@@ -140,6 +143,24 @@ button:hover{
 button .rot{
   transform: rotate(-180deg);
 }
+
+button.small-button{
+  /* small et rounded button */
+  font-size: 1rem;
+  padding: 0;
+
+  border-width: 0px;
+  background-color: var(--middle);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 hr{
   width: 100%;
   box-sizing: border-box;
@@ -148,6 +169,7 @@ hr{
   padding: 0;
   margin: 1em 1em;
 }
+
 .arrow:after{
   font-family: 'Verdana';
   content: "\2192";

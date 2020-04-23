@@ -17,12 +17,12 @@
 	 - interface de gestion des infos
 	 - interface pour poster/modifier/supprimer dans le BLOG
 	 - verifier si qq est 2x dans la db et le faire auto dans le code
+	 - petit cadena sur la page d'acceuil pour accès a la gestion
 
 	 TODO:
 	- recup une mailing list !
 	- changement du mot de passe des permanence !
 	- désinscription des membres via la page de gestion? (plus de modal?)
-	- petit cadena sur la page d'acceuil pour accès a la gestion
 	- nice url with htaccess (ok wait for domaine public)
 
 	ancien site web initié par
@@ -48,7 +48,7 @@
 
 <body>
 
-	<section class="bandes-container">
+	<nav class="bandes-container">
 
   	<a class="bande" href="/bag.html">
      		<h1 class="title">BàG</h1>
@@ -70,7 +70,11 @@
 				<h1>Ekip</h1>
 		</a>
 
-	</section>
+		<button id="gestion" class="small-button" onclick="location.href='/gestion.php'">
+				<span class="unicode">&#x2699;</span>
+		</button>
+
+	</nav>
 
 	<script>
 		var bandes = document.getElementsByClassName("bande");

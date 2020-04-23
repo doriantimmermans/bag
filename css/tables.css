@@ -107,16 +107,5 @@
   min-width: 1px;
 }
 .flex-table button{
-  font-size: 1rem;
-  padding: 0;
   flex-shrink: 0;
-
-  border-width: 0px;
-  background-color: var(--middle);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

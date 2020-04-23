@@ -53,7 +53,7 @@
       </h3>
   </header>
 
-  <section class="container flex">
+  <main class="container flex">
 
     <article class="item full">
       <div class="one-line-flex">
@@ -152,7 +152,7 @@
       <button onclick="location.href='/'"> <span class="unicode">&#10148;&#xFE0E;</span> </button>
     </article>
 
-  </section>
+  </main>
 
   <footer class="footer">
       <div class="marquee">

@@ -57,7 +57,7 @@
       </h3>
   </header>
 
-  <section class="container flex">
+  <main class="container flex">
 
     <article class="item full">
       <button onclick="location.href='/'">
@@ -94,7 +94,7 @@
 
                 <form class="big" method="post" action="desinscription.php">
                   <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
-                  <button id="button_<?php echo $user['id']; ?>" class="modal_btn center-box" type="button"><span class="unicode">&times</span></button>
+                  <button id="button_<?php echo $user['id']; ?>" class="modal_btn small-button" type="button"><span class="unicode">&times</span></button>
 
                   <!-- boite modal de connection -->
                   <div id="mod_<?php echo $user['id']; ?>" class="modal">
@@ -109,7 +109,7 @@
                 <form method="post" action="transaction.php">
                   <input type="hidden" value="<?php echo $user['id']; ?>" name="id">
                   <input type="number" placeholder="0" name="modif">
-                  <button class="center-box" type="submit"><span class="unicode">&#8645;</span></button>
+                  <button class="small-button" type="submit"><span class="unicode">&#8645;</span></button>
                 </form>
 
               </div>
@@ -201,7 +201,7 @@
 
           <?php
           $reponse = $bdd->query('SELECT action, glocks, date, DATE_FORMAT(date, \'%d/%m/%y\') date_fr, DATE_FORMAT(date, \'%Hh%im%ss\') heure, nom, prenom
-          FROM journal ORDER BY date DESC');
+          FROM journal ORDER BY date DESC LIMIT 100');
 
           // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
           while ($journal = $reponse->fetch()){?>
@@ -287,75 +287,11 @@
       ?>
       </article>
 
-      <!-- STATISTIQUES PRINTING -->
-
-      <?php
-      if (isset($_SESSION['admin'])){?>
-        <article class="item full">
-
-          <h2>Statistiques</h2>
-
-          <div class="scroll-table-container">
-            <table id="stat" class="data-table">
-              <tr>
-                <th>Jours</th>
-                <th>Inscr.</th>
-                <th>Ventes</th>
-                <th>Entrées</th>
-                <th>Total</th>
-              </tr>
-
-            <?php
-              // entrées sorties
-              $reponse = $bdd->query(
-              'SELECT
-                COUNT(CASE WHEN action="Inscription" THEN 1 ELSE NULL END) as inscriptions,
-                SUM(CASE WHEN action="Décompte" THEN glocks ELSE 0 END) as ventes,
-                SUM(CASE WHEN action="Ajout" THEN glocks ELSE 0 END) as entrées,
-                SUM(CASE WHEN action="Ajout" OR action="Décompte" THEN glocks ELSE 0 END) as Total,
-                COUNT(CASE WHEN action="Décompte"THEN 1 ELSE NULL END) as ventes_trans,
-                COUNT(CASE WHEN action="Ajout" THEN 1 ELSE NULL END) as entrées_trans,
-                COUNT(CASE WHEN action="Ajout" OR action="Décompte" THEN 1 ELSE NULL END) as total_trans,
-                date,
-                DATE_FORMAT(date, \'%Y/%m/%d\') day,
-                DATE_FORMAT(date, \'%d/%m/%y\') day_fr
-              FROM journal
-              GROUP BY day
-              ORDER BY day
-              DESC');
-
-              while ($stat = $reponse->fetch()){?>
-                <tr>
-                  <td class="left"> <?php echo $stat['day_fr'] ?> </td>
-                  <td> <?php echo $stat['inscriptions'] ?> </td>
-                  <td> <?php echo $stat['ventes'] ?>&#8370; (<?php echo $stat['ventes_trans'] ?> trans.) </td>
-                  <td> <?php echo $stat['entrées'] ?>&#8370; (<?php echo $stat['entrées_trans'] ?> trans.)</td>
-                  <td> <?php echo $stat['Total'] ?>&#8370; (<?php echo $stat['total_trans'] ?> trans.) </td>
-                </tr>
-                <?php
-              }
-            ?>
-          </table>
-        </div>
-
-        <p>
-          <b>ventes:</b> glocks retirés aux usager.ère.s pour achat. <br/>
-          <b>entrées:</b> glocks donnés aux usager.ère.s pour don de matériel ou service. <br/>
-          <b>trans.:</b> nombre de transaction.
-        </p>
-
-        </article>
-
-        <?php
-      }
-      ?>
-
-
     <article class="item right full">
       <button onclick="location.href='/'"> <span class="unicode">&#10148;</span> </button>
     </article>
 
-  </section>
+  </main>
 
   <footer class="footer">
       <div class="marquee">
