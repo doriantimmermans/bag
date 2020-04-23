@@ -71,7 +71,7 @@
 
 
   // redirection
-  header('Location: blog');
+  header('Location: blog.php');
 
 
   // --- Details de l'upload de l'image

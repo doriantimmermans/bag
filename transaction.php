@@ -33,5 +33,5 @@
     $req -> execute();
   }
 
-  header('Location:glock');
+  header('Location: glock.php');
 ?>

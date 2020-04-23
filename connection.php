@@ -7,7 +7,7 @@
   // fclose($myfile);
 
   //  Récupération du mot de passe
-  $mdp = file_get_contents('.password');
+  $mdp = file_get_contents('infos/mdp.txt');
 
   // Comparaison du pass envoyé via le formulaire avec la base
   $isPasswordCorrect = password_verify($_POST['mdp'], $mdp);
@@ -21,6 +21,6 @@
       echo 'Mauvais identifiant ou mot de passe';
   }
 
-  header("Location: glock");
+  header("Location: glock.php");
 
 ?>

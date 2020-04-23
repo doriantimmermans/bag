@@ -88,7 +88,7 @@
           $previous_page = $page - 1;
           ?>
             <div class="center">
-              <button onclick="location.href='<?php echo '/blog/' . $previous_page ; ?>'">
+              <button onclick="location.href='<?php echo '/blog.php?page=' . $previous_page ; ?>'">
                 <span class="unicode">&#11014;&#xFE0E;</span>
               </button>
             </div>
@@ -138,7 +138,7 @@
       $next_page = $page + 1;
       ?>
         <article class="item center full">
-          <button onclick="location.href='<?php echo '/blog/' . $next_page ; ?>'">
+          <button onclick="location.href='<?php echo '/blog.php?page=' . $next_page ; ?>'">
             <span class="unicode">&#11015;</span>
           </button>
         </article>

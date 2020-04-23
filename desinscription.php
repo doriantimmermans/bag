@@ -1,4 +1,4 @@
-$user<?php
+<?php
   // Connexion à la base de données
   require('config.php');
 
@@ -27,5 +27,5 @@ $user<?php
     $req -> execute();
   }
 
-  header('Location:glock');
+  header('Location: glock.php');
 ?>

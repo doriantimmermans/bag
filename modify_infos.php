@@ -16,5 +16,5 @@
     fclose($file);
   }
 
-  header('Location: gestion');
+  header('Location: gestion.php');
 ?>

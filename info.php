@@ -132,7 +132,7 @@
       <h2>Interdépendance</h2>
       <p>
         L'existence et la disponibilité de la BàG repose sur la participation de ses usager.ère.s.
-        N'hésitez pas à nous <a href="equipe">contacter</a> (en tant que personne, entreprise, atelier, asbl, collectif, ...) si:
+        N'hésitez pas à nous <a href="equipe.php">contacter</a> (en tant que personne, entreprise, atelier, asbl, collectif, ...) si:
       </p>
       <p>
         <span class="unicode arrow"></span> si vous avez du materiel ou des chutes à donner dont vous voulez vous débarrassez.
