@@ -2,7 +2,7 @@
 
 Site de la Boite-à-Gants, récupérathèque de l'ERG.
 
-## Gestion des Glocks
+## Gestion de la monnaie
 
 La gestions des glocks est réalisée grâce à une base de donnée MySQL controlé en php avec PDO (PHP Data Objects).
 
