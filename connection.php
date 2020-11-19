@@ -1,9 +1,9 @@
 
 <?php
 
-  // Changer le mot de passe
+  // --- Changer le mot de passe
   // $myfile = fopen(".password", "w") or die("Unable to open file!");
-  // fwrite($myfile, password_hash("carapils", PASSWORD_DEFAULT));
+  // fwrite($myfile, password_hash("mot de passe", PASSWORD_DEFAULT));
   // fclose($myfile);
 
   //  Récupération du mot de passe
